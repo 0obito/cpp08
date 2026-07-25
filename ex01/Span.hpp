@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 #include <vector>
+#include <algorithm>
 
 class Span {
     private:
@@ -19,6 +20,10 @@ class Span {
         // maybe use long instead of unsigned int?
         unsigned int shortestSpan();
         unsigned int longestSpan();
+
+
+        const std::vector<int> &getVec() const;
+        void printVec(const std::vector<int> &vec);
 };
 
 #endif /*SPAN_HPP*/
