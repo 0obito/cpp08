@@ -7,9 +7,8 @@
 
 class Span {
     private:
-        unsigned int _size;
-        unsigned int _filled;
-        std::vector<int> _intVect;
+        unsigned int _N;
+        std::vector<int> _intVec;
     public:
         Span();
         Span(unsigned int N);
@@ -17,13 +16,15 @@ class Span {
         Span& operator=(const Span& other);
         ~Span();
         void addNumber(int num);
-        // maybe use long instead of unsigned int?
         unsigned int shortestSpan();
         unsigned int longestSpan();
 
-
-        const std::vector<int> &getVec() const;
-        void printVec(const std::vector<int> &vec);
+        template <typename Iterator>
+        void addRangeOfNumbers(Iterator start, Iterator finish) {
+            if (std::distance(start, finish) + _intVec.size() > _N)
+                throw std::out_of_range("No enough space to add the range of numbers.");
+            _intVec.insert(_intVec.end(), start, finish);
+        }
 };
 
 #endif /*SPAN_HPP*/
