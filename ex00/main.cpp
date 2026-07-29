@@ -12,6 +12,14 @@ int main() {
     vec.push_back(4);
     vec.push_back(6);
 
+    std::list<int> l;
+    l.push_back(2);
+    l.push_back(1);
+    l.push_back(4);
+    l.push_back(3);
+    l.push_back(6);
+    l.push_back(5);
+
     std::cout<<"========== Test 1: int vector (element doesn't exist) ==========\n\n";
     try {
         easyfind(vec, 1);
@@ -28,17 +36,9 @@ int main() {
         std::cout<<"Caught Exception: "<<e.what()<<"\n";
     }
 
-    std::list<int> l;
-    l.push_back(2);
-    l.push_back(1);
-    l.push_back(4);
-    l.push_back(3);
-    l.push_back(6);
-    l.push_back(5);
-
     std::cout<<"\n========== Test 3: int list (element exists) ==========\n\n";
     try {
-        easyfind(l, 5);
+        easyfind(l, 6);
     }
     catch (std::out_of_range& e) {
         std::cout<<"Caught Exception: "<<e.what()<<"\n";

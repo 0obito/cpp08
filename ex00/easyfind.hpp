@@ -6,8 +6,8 @@
 #include <iostream>
 
 template <typename T>
-void easyfind(T& t, int i) {
-    typename T::iterator it;
+void easyfind(const T& t, int i) {
+    typename T::const_iterator it;
     it = std::find(t.begin(), t.end(), i);
     if (it == t.end())
         throw std::out_of_range("element was not found in the container.");
