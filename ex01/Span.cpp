@@ -1,5 +1,4 @@
 #include "Span.hpp"
-#include <iostream>
 
 Span::Span() : _N(0) {}
 
